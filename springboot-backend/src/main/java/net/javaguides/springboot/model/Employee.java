@@ -24,17 +24,17 @@ public class Employee {
     private Long id;
 
     @Column(name = "first_name")
-    private String firstname;
+    private String firstName;
 
     @Column(name = "last_name")
-    private String lastname;
+    private String lastName;
 
     @Column(name = "email_id")
     private String emailId;
 
-    public Employee(String firstname, String lastname, String emailId) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Employee(String firstName, String lastName, String emailId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.emailId = emailId;
     }
 
