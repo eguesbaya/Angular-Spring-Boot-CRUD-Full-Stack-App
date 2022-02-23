@@ -5,7 +5,7 @@ import { EmployeeService } from './employee.service';
 
 const routes: Routes = [
   { path: 'employees', component: EmployeeListComponent },
-  {path: '', redirectTo: 'employees', pathMatch: 'full'}
+  { path: '', redirectTo: 'employees', pathMatch: 'full'}
 ];
 
 @NgModule({
