@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeService } from './employee.service';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: 'employees', component: EmployeeListComponent },
   { path: 'create-employee', component: CreateEmployeeComponent},
   { path: '', redirectTo: 'employees', pathMatch: 'full' },
-  { path: 'update-employee/:id', component: UpdateEmployeeComponent }
+  { path: 'update-employee/:id', component: UpdateEmployeeComponent },
+  { path: 'view-employee/:id', component: EmployeeDetailsComponent}
 ];
 
 @NgModule({

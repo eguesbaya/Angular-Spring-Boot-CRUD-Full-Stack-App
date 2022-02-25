@@ -1,0 +1,11 @@
+<h2>#{{employee.id}} {{ employee.firstName}} {{ employee.lastName}}</h2>
+
+<div *ngIf = "employeeExists() else elseBlock">
+    <p>ID: {{ employee.id }}</p>
+    <p>First Name: {{ employee.firstName }}</p>
+    <p>Last Name: {{employee.lastName}}</p>
+    <p>Email id: {{ employee.emailId}}</p>
+</div>
+<ng-template #elseBlock>
+    <p>This employee does not exist!</p>
+</ng-template>
