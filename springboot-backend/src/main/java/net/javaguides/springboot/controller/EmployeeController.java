@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
 import net.javaguides.springboot.exception.ResourceNotFoundException;
 
 import net.javaguides.springboot.model.Employee;
@@ -53,14 +55,18 @@ public class EmployeeController {
             employee.setFirstName(input.getFirstName());
         }
         if (input.getLastName() != null) {
-           employee.setLastName(input.getLastName()); 
+            employee.setLastName(input.getLastName());
         }
         if (input.getEmailId() != null) {
             employee.setEmailId(input.getEmailId());
         }
-        
-
         return ResponseEntity.ok(employeeRepository.save(employee));
+    }
+
+    @DeleteMapping("/employees/{id}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable Long id) {
+        employeeRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
